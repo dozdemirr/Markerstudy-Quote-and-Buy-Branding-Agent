@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marital Status - Swinton Go! Insurance</title>
+    <title>Occupation - Swinton Go! Insurance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -39,42 +39,17 @@
     <main id="main-content">
         <div class="page-section page-section--narrow">
             <span class="sub-step-label">About you</span>
-            <h1 class="page-heading">What's your marital status?</h1>
-            
-            <div class="sel-buttons sel-buttons--full" id="choice-pills">
-                
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-married" value="Married">
-                            <label for="pill-married">Married</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-single" value="Single">
-                            <label for="pill-single">Single</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-cohabitingpartnered" value="Cohabiting/Partnered">
-                            <label for="pill-cohabitingpartnered">Cohabiting / Partnered</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-divorceddissolved" value="Divorced/Dissolved">
-                            <label for="pill-divorceddissolved">Divorced / Dissolved</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-separated" value="Separated">
-                            <label for="pill-separated">Separated</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-widowedsurvivingcivilpartner" value="Widowed/Surviving Civil Partner">
-                            <label for="pill-widowedsurvivingcivilpartner">Widowed / Surviving Civil Partner</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-civilpartnership" value="Civil Partnership">
-                            <label for="pill-civilpartnership">Civil Partnership</label>
-                        </div>
+            <h1 class="page-heading">What is your occupation?</h1>
+            <p class="page-subtext">Start typing to search for your occupation or industry</p>
+            <div class="form-row">
+                <label class="form-row__label" for="occ-search">Occupation / industry</label>
+                <input class="form-control" type="text" id="occ-search" placeholder="e.g. Teacher, Engineer&hellip;" autocomplete="off">
+                <div class="form-row__validation-text" id="err-occ">Please select your occupation</div>
             </div>
-            <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please make a selection</div>
-            <div class="nav-buttons">
-                <a href="index.html" class="button button--back">&larr; Back</a>
+            <ul class="occupation-results" id="occ-results"></ul>
+            <div class="nav-buttons" style="justify-content:space-between;">
+                <a href="employment-status.html" class="button button--back">&larr; Back</a>
+                <button class="button button--primary" id="btn-occ-continue" type="button">Continue</button>
             </div>
         </div>
     </main>
@@ -142,13 +117,42 @@
     <script>
     (function() {
         if (!Store.get('firstName')) { window.location.href = 'index.html'; return; }
-        var radios = document.querySelectorAll('input[name="choice"]');
-        radios.forEach(function(r) {
-            r.addEventListener('change', function() {
-                document.getElementById('err-choice').classList.remove('visible');
-                Store.set('maritalStatus', this.value);
-                setTimeout(function() { window.location.href = 'address.html'; }, 250);
+        var OCCUPATIONS = ["Accountant", "Actor / Entertainer", "Architect", "Builder / Construction Worker", "Civil Servant", "Cleaner / Domestic", "Delivery Driver", "Designer", "Doctor / GP", "Electrician", "Engineer", "Farmer / Agricultural Worker", "Financial Analyst", "Firefighter", "Graphic Designer", "Healthcare Worker", "IT Professional", "Journalist", "Lawyer / Solicitor", "Manager", "Marketing Professional", "Nurse", "Office Worker", "Pharmacist", "Plumber", "Police Officer", "Project Manager", "Receptionist", "Retail Worker", "Sales Representative", "Social Worker", "Teacher", "Technician", "Therapist", "Tradesperson", "Waiter / Waitress", "Writer / Author", "Other"];
+        var selectedOcc = Store.get('occupation') || null;
+        var searchEl = document.getElementById('occ-search');
+        var resultsList = document.getElementById('occ-results');
+        if (selectedOcc) searchEl.value = selectedOcc;
+
+        searchEl.addEventListener('input', function() {
+            var q = this.value.toLowerCase().trim();
+            resultsList.innerHTML = '';
+            selectedOcc = null;
+            if (!q) { resultsList.classList.remove('open'); return; }
+            var matches = OCCUPATIONS.filter(function(o) { return o.toLowerCase().indexOf(q) >= 0; });
+            if (!matches.length) { resultsList.classList.remove('open'); return; }
+            matches.forEach(function(m) {
+                var li = document.createElement('li');
+                li.textContent = m;
+                li.addEventListener('click', function() {
+                    selectedOcc = m;
+                    searchEl.value = m;
+                    resultsList.classList.remove('open');
+                    document.getElementById('err-occ').classList.remove('visible');
+                });
+                resultsList.appendChild(li);
             });
+            resultsList.classList.add('open');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!resultsList.contains(e.target) && e.target !== searchEl) resultsList.classList.remove('open');
+        });
+
+        document.getElementById('btn-occ-continue').addEventListener('click', function() {
+            if (!selectedOcc) { document.getElementById('err-occ').classList.add('visible'); return; }
+            document.getElementById('err-occ').classList.remove('visible');
+            Store.set('occupation', selectedOcc);
+            window.location.href = 'licence-type.html';
         });
     }());
     </script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marital Status - Swinton Go! Insurance</title>
+    <title>Licence Type - Swinton Go! Insurance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -39,42 +39,16 @@
     <main id="main-content">
         <div class="page-section page-section--narrow">
             <span class="sub-step-label">About you</span>
-            <h1 class="page-heading">What's your marital status?</h1>
-            
+            <h1 class="page-heading">What type of driving licence do you hold?</h1>
             <div class="sel-buttons sel-buttons--full" id="choice-pills">
-                
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-married" value="Married">
-                            <label for="pill-married">Married</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-single" value="Single">
-                            <label for="pill-single">Single</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-cohabitingpartnered" value="Cohabiting/Partnered">
-                            <label for="pill-cohabitingpartnered">Cohabiting / Partnered</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-divorceddissolved" value="Divorced/Dissolved">
-                            <label for="pill-divorceddissolved">Divorced / Dissolved</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-separated" value="Separated">
-                            <label for="pill-separated">Separated</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-widowedsurvivingcivilpartner" value="Widowed/Surviving Civil Partner">
-                            <label for="pill-widowedsurvivingcivilpartner">Widowed / Surviving Civil Partner</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-civilpartnership" value="Civil Partnership">
-                            <label for="pill-civilpartnership">Civil Partnership</label>
-                        </div>
+                <div class="sel-btn"><input type="radio" name="licenceType" id="lic-full" value="Full UK / EU"><label for="lic-full">Full UK / EU</label></div>
+                <div class="sel-btn"><input type="radio" name="licenceType" id="lic-prov" value="Provisional"><label for="lic-prov">Provisional</label></div>
+                <div class="sel-btn"><input type="radio" name="licenceType" id="lic-intl" value="International"><label for="lic-intl">International</label></div>
+                <div class="sel-btn"><input type="radio" name="licenceType" id="lic-other" value="Other"><label for="lic-other">Other</label></div>
             </div>
-            <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please make a selection</div>
+            <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please select your licence type</div>
             <div class="nav-buttons">
-                <a href="index.html" class="button button--back">&larr; Back</a>
+                <a href="#" class="button button--back" id="btn-back">&larr; Back</a>
             </div>
         </div>
     </main>
@@ -142,12 +116,16 @@
     <script>
     (function() {
         if (!Store.get('firstName')) { window.location.href = 'index.html'; return; }
-        var radios = document.querySelectorAll('input[name="choice"]');
+        // Back: go to occupation if employed, else employment-status
+        var empStatus = Store.get('employmentStatus') || '';
+        var employed = ['Employed','Self-employed','Company director','Director','Temporary'].indexOf(empStatus) >= 0;
+        document.getElementById('btn-back').href = employed ? 'occupation.html' : 'employment-status.html';
+        var radios = document.querySelectorAll('input[name="licenceType"]');
         radios.forEach(function(r) {
             r.addEventListener('change', function() {
                 document.getElementById('err-choice').classList.remove('visible');
-                Store.set('maritalStatus', this.value);
-                setTimeout(function() { window.location.href = 'address.html'; }, 250);
+                Store.set('licenceType', this.value);
+                setTimeout(function() { window.location.href = 'licence-years.html'; }, 250);
             });
         });
     }());

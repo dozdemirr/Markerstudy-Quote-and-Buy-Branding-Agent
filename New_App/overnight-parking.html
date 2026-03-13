@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marital Status - Swinton Go! Insurance</title>
+    <title>Overnight Parking - Swinton Go! Insurance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-step="1">
+<body data-step="2">
 
     <header class="page-header">
         <div class="page-header__wrapper">
@@ -16,11 +16,11 @@
                 <img src="images/logo.png" alt="Swinton Go! Insurance">
             </a>
             <nav class="progress-nav" aria-label="Quote progress">
-                <div class="progress-nav__step progress-nav__step--active" data-step="1">
+                <div class="progress-nav__step progress-nav__step--done" data-step="1">
                     <div class="progress-nav__dot"></div>
                     <span class="progress-nav__label">Your details</span>
                 </div>
-                <div class="progress-nav__step" data-step="2">
+                <div class="progress-nav__step progress-nav__step--active" data-step="2">
                     <div class="progress-nav__dot"></div>
                     <span class="progress-nav__label">Your car</span>
                 </div>
@@ -38,43 +38,35 @@
 
     <main id="main-content">
         <div class="page-section page-section--narrow">
-            <span class="sub-step-label">About you</span>
-            <h1 class="page-heading">What's your marital status?</h1>
+            <span class="sub-step-label">Your car</span>
+            <h1 class="page-heading">Where is your car kept overnight?</h1>
             
             <div class="sel-buttons sel-buttons--full" id="choice-pills">
                 
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-married" value="Married">
-                            <label for="pill-married">Married</label>
+                            <input type="radio" name="choice" id="pill-drivewayprivateland" value="Driveway/Private land">
+                            <label for="pill-drivewayprivateland">Driveway / Private land</label>
                         </div>
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-single" value="Single">
-                            <label for="pill-single">Single</label>
+                            <input type="radio" name="choice" id="pill-garage" value="Garage">
+                            <label for="pill-garage">Garage</label>
                         </div>
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-cohabitingpartnered" value="Cohabiting/Partnered">
-                            <label for="pill-cohabitingpartnered">Cohabiting / Partnered</label>
+                            <input type="radio" name="choice" id="pill-streetroad" value="Street/Road">
+                            <label for="pill-streetroad">Street / Road</label>
                         </div>
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-divorceddissolved" value="Divorced/Dissolved">
-                            <label for="pill-divorceddissolved">Divorced / Dissolved</label>
+                            <input type="radio" name="choice" id="pill-carpark" value="Car park">
+                            <label for="pill-carpark">Car park</label>
                         </div>
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-separated" value="Separated">
-                            <label for="pill-separated">Separated</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-widowedsurvivingcivilpartner" value="Widowed/Surviving Civil Partner">
-                            <label for="pill-widowedsurvivingcivilpartner">Widowed / Surviving Civil Partner</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-civilpartnership" value="Civil Partnership">
-                            <label for="pill-civilpartnership">Civil Partnership</label>
+                            <input type="radio" name="choice" id="pill-other" value="Other">
+                            <label for="pill-other">Other</label>
                         </div>
             </div>
             <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please make a selection</div>
             <div class="nav-buttons">
-                <a href="index.html" class="button button--back">&larr; Back</a>
+                <a href="your-car.html" class="button button--back">&larr; Back</a>
             </div>
         </div>
     </main>
@@ -146,8 +138,8 @@
         radios.forEach(function(r) {
             r.addEventListener('change', function() {
                 document.getElementById('err-choice').classList.remove('visible');
-                Store.set('maritalStatus', this.value);
-                setTimeout(function() { window.location.href = 'address.html'; }, 250);
+                Store.set('overnightParking', this.value);
+                setTimeout(function() { window.location.href = 'your-cover.html'; }, 250);
             });
         });
     }());

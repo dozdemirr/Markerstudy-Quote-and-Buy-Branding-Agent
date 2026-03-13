@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marital Status - Swinton Go! Insurance</title>
+    <title>Employment Status - Swinton Go! Insurance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -39,42 +39,19 @@
     <main id="main-content">
         <div class="page-section page-section--narrow">
             <span class="sub-step-label">About you</span>
-            <h1 class="page-heading">What's your marital status?</h1>
-            
-            <div class="sel-buttons sel-buttons--full" id="choice-pills">
-                
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-married" value="Married">
-                            <label for="pill-married">Married</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-single" value="Single">
-                            <label for="pill-single">Single</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-cohabitingpartnered" value="Cohabiting/Partnered">
-                            <label for="pill-cohabitingpartnered">Cohabiting / Partnered</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-divorceddissolved" value="Divorced/Dissolved">
-                            <label for="pill-divorceddissolved">Divorced / Dissolved</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-separated" value="Separated">
-                            <label for="pill-separated">Separated</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-widowedsurvivingcivilpartner" value="Widowed/Surviving Civil Partner">
-                            <label for="pill-widowedsurvivingcivilpartner">Widowed / Surviving Civil Partner</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-civilpartnership" value="Civil Partnership">
-                            <label for="pill-civilpartnership">Civil Partnership</label>
-                        </div>
+            <h1 class="page-heading">What is your employment status?</h1>
+            <div class="sel-buttons sel-buttons--full" id="emp-pills">
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-employed" value="Employed"><label for="emp-employed">Employed</label></div>
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-self" value="Self-employed"><label for="emp-self">Self-employed</label></div>
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-director" value="Company director"><label for="emp-director">Company director</label></div>
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-unemployed" value="Unemployed"><label for="emp-unemployed">Unemployed</label></div>
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-retired" value="Retired"><label for="emp-retired">Retired</label></div>
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-student" value="In full-time education"><label for="emp-student">In full-time education</label></div>
+                <div class="sel-btn"><input type="radio" name="empStatus" id="emp-notemployed" value="Not employed"><label for="emp-notemployed">Not employed</label></div>
             </div>
-            <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please make a selection</div>
+            <div class="form-row__validation-text" id="err-emp" style="margin-top:8px;">Please select your employment status</div>
             <div class="nav-buttons">
-                <a href="index.html" class="button button--back">&larr; Back</a>
+                <a href="uk-resident.html" class="button button--back">&larr; Back</a>
             </div>
         </div>
     </main>
@@ -142,12 +119,14 @@
     <script>
     (function() {
         if (!Store.get('firstName')) { window.location.href = 'index.html'; return; }
-        var radios = document.querySelectorAll('input[name="choice"]');
+        var NEEDS_OCCUPATION = ['Employed','Self-employed','Company director'];
+        var radios = document.querySelectorAll('input[name="empStatus"]');
         radios.forEach(function(r) {
             r.addEventListener('change', function() {
-                document.getElementById('err-choice').classList.remove('visible');
-                Store.set('maritalStatus', this.value);
-                setTimeout(function() { window.location.href = 'address.html'; }, 250);
+                document.getElementById('err-emp').classList.remove('visible');
+                Store.set('employmentStatus', this.value);
+                var next = NEEDS_OCCUPATION.indexOf(this.value) >= 0 ? 'occupation.html' : 'licence-type.html';
+                setTimeout(function() { window.location.href = next; }, 250);
             });
         });
     }());

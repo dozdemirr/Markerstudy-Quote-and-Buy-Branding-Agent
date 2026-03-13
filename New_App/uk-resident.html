@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marital Status - Swinton Go! Insurance</title>
+    <title>UK Resident - Swinton Go! Insurance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -39,42 +39,23 @@
     <main id="main-content">
         <div class="page-section page-section--narrow">
             <span class="sub-step-label">About you</span>
-            <h1 class="page-heading">What's your marital status?</h1>
-            
-            <div class="sel-buttons sel-buttons--full" id="choice-pills">
-                
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-married" value="Married">
-                            <label for="pill-married">Married</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-single" value="Single">
-                            <label for="pill-single">Single</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-cohabitingpartnered" value="Cohabiting/Partnered">
-                            <label for="pill-cohabitingpartnered">Cohabiting / Partnered</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-divorceddissolved" value="Divorced/Dissolved">
-                            <label for="pill-divorceddissolved">Divorced / Dissolved</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-separated" value="Separated">
-                            <label for="pill-separated">Separated</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-widowedsurvivingcivilpartner" value="Widowed/Surviving Civil Partner">
-                            <label for="pill-widowedsurvivingcivilpartner">Widowed / Surviving Civil Partner</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-civilpartnership" value="Civil Partnership">
-                            <label for="pill-civilpartnership">Civil Partnership</label>
-                        </div>
+            <h1 class="page-heading">How long have you lived in the UK?</h1>
+            <div class="form-row" style="max-width:340px;">
+                <label class="form-row__label" for="uk-resident-select">Select duration</label>
+                <select class="form-control" id="uk-resident-select">
+                    <option value="">Please select&hellip;</option>
+                    <option value="Since birth">Since birth</option>
+                    <option value="10+ years">10 or more years</option>
+                    <option value="5-9 years">5 to 9 years</option>
+                    <option value="3-4 years">3 to 4 years</option>
+                    <option value="1-2 years">1 to 2 years</option>
+                    <option value="Less than 1 year">Less than 1 year</option>
+                </select>
+                <div class="form-row__validation-text" id="err-resident">Please select how long you have lived in the UK</div>
             </div>
-            <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please make a selection</div>
-            <div class="nav-buttons">
-                <a href="index.html" class="button button--back">&larr; Back</a>
+            <div class="nav-buttons" style="justify-content:space-between;">
+                <a href="home-owner.html" class="button button--back">&larr; Back</a>
+                <button class="button button--primary" id="btn-continue" type="button">Continue</button>
             </div>
         </div>
     </main>
@@ -142,13 +123,14 @@
     <script>
     (function() {
         if (!Store.get('firstName')) { window.location.href = 'index.html'; return; }
-        var radios = document.querySelectorAll('input[name="choice"]');
-        radios.forEach(function(r) {
-            r.addEventListener('change', function() {
-                document.getElementById('err-choice').classList.remove('visible');
-                Store.set('maritalStatus', this.value);
-                setTimeout(function() { window.location.href = 'address.html'; }, 250);
-            });
+        var saved = Store.get('ukResident');
+        if (saved) document.getElementById('uk-resident-select').value = saved;
+        document.getElementById('btn-continue').addEventListener('click', function() {
+            var v = document.getElementById('uk-resident-select').value;
+            if (!v) { document.getElementById('err-resident').classList.add('visible'); return; }
+            document.getElementById('err-resident').classList.remove('visible');
+            Store.set('ukResident', v);
+            window.location.href = 'employment-status.html';
         });
     }());
     </script>
