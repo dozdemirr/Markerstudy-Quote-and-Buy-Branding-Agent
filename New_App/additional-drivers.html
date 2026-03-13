@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marital Status - Swinton Go! Insurance</title>
+    <title>Additional Drivers - Swinton Go! Insurance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -39,42 +39,22 @@
     <main id="main-content">
         <div class="page-section page-section--narrow">
             <span class="sub-step-label">About you</span>
-            <h1 class="page-heading">What's your marital status?</h1>
+            <h1 class="page-heading">Are there any additional drivers you'd like to add?</h1>
             
             <div class="sel-buttons sel-buttons--full" id="choice-pills">
                 
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-married" value="Married">
-                            <label for="pill-married">Married</label>
+                            <input type="radio" name="choice" id="pill-yes" value="Yes">
+                            <label for="pill-yes">Yes</label>
                         </div>
                         <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-single" value="Single">
-                            <label for="pill-single">Single</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-cohabitingpartnered" value="Cohabiting/Partnered">
-                            <label for="pill-cohabitingpartnered">Cohabiting / Partnered</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-divorceddissolved" value="Divorced/Dissolved">
-                            <label for="pill-divorceddissolved">Divorced / Dissolved</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-separated" value="Separated">
-                            <label for="pill-separated">Separated</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-widowedsurvivingcivilpartner" value="Widowed/Surviving Civil Partner">
-                            <label for="pill-widowedsurvivingcivilpartner">Widowed / Surviving Civil Partner</label>
-                        </div>
-                        <div class="sel-btn">
-                            <input type="radio" name="choice" id="pill-civilpartnership" value="Civil Partnership">
-                            <label for="pill-civilpartnership">Civil Partnership</label>
+                            <input type="radio" name="choice" id="pill-no" value="No">
+                            <label for="pill-no">No</label>
                         </div>
             </div>
             <div class="form-row__validation-text" id="err-choice" style="margin-top:8px;">Please make a selection</div>
             <div class="nav-buttons">
-                <a href="index.html" class="button button--back">&larr; Back</a>
+                <a href="criminal-convictions.html" class="button button--back">&larr; Back</a>
             </div>
         </div>
     </main>
@@ -146,8 +126,8 @@
         radios.forEach(function(r) {
             r.addEventListener('change', function() {
                 document.getElementById('err-choice').classList.remove('visible');
-                Store.set('maritalStatus', this.value);
-                setTimeout(function() { window.location.href = 'address.html'; }, 250);
+                Store.set('additionalDrivers', this.value);
+                setTimeout(function() { window.location.href = 'your-car.html'; }, 250);
             });
         });
     }());

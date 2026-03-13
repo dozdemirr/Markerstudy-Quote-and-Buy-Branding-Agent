@@ -4,41 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Quote - Swinton Go! Insurance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-step="4">
 
-    <!-- Header -->
     <header class="page-header">
         <div class="page-header__wrapper">
             <a href="index.html" class="page-header__logo" aria-label="Swinton Go! Insurance - Home">
                 <img src="images/logo.png" alt="Swinton Go! Insurance">
             </a>
+            <nav class="progress-nav" aria-label="Quote progress">
+                <div class="progress-nav__step progress-nav__step--done" data-step="1">
+                    <div class="progress-nav__dot"></div>
+                    <span class="progress-nav__label">Your details</span>
+                </div>
+                <div class="progress-nav__step progress-nav__step--done" data-step="2">
+                    <div class="progress-nav__dot"></div>
+                    <span class="progress-nav__label">Your car</span>
+                </div>
+                <div class="progress-nav__step progress-nav__step--done" data-step="3">
+                    <div class="progress-nav__dot"></div>
+                    <span class="progress-nav__label">Your cover</span>
+                </div>
+                <div class="progress-nav__step progress-nav__step--active" data-step="4">
+                    <div class="progress-nav__dot"></div>
+                    <span class="progress-nav__label">Quote</span>
+                </div>
+            </nav>
         </div>
     </header>
-
-    <!-- Progress bar -->
-    <nav class="progress-bar" aria-label="Quote progress">
-        <div class="progress-bar__inner">
-            <div class="progress-bar__track"></div>
-            <div class="step step--done" data-step="1">
-                <div class="step__dot">&#10003;</div>
-                <span class="step__label">Your details</span>
-            </div>
-            <div class="step step--done" data-step="2">
-                <div class="step__dot">&#10003;</div>
-                <span class="step__label">Your car</span>
-            </div>
-            <div class="step step--done" data-step="3">
-                <div class="step__dot">&#10003;</div>
-                <span class="step__label">Your cover</span>
-            </div>
-            <div class="step step--active" data-step="4">
-                <div class="step__dot"></div>
-                <span class="step__label">Quote</span>
-            </div>
-        </div>
-    </nav>
 
     <main id="main-content">
         <div class="page-section" id="quote-output">
@@ -49,31 +45,39 @@
         </div>
     </main>
 
-    <!-- Trust strip -->
-    <div class="trust-strip">
-        <div class="trust-strip__inner">
-            <div class="trust-item"><span class="trust-item__icon">✓</span> FCA Authorised &amp; Regulated</div>
-            <div class="trust-item"><span class="trust-item__icon">✓</span> No hidden fees</div>
-            <div class="trust-item"><span class="trust-item__icon">✓</span> UK-based claims team, 24/7</div>
-            <div class="trust-item"><span class="trust-item__icon">✓</span> Secure &amp; encrypted</div>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer>
         <div class="footer__inner">
             <div class="footer__copy">
-                <p>&copy; 2026 Swinton Go! All rights reserved.</p>
-                <p style="margin-top:4px;">Swinton Go! Insurance is arranged and administered by BISL Limited.</p>
+                <p><strong>&copy; 2026 Swinton Go!</strong> All rights reserved</p>
             </div>
             <ul class="footer__links">
-                <li><a href="#">Important info</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Cookie policy</a></li>
+                <li><a href="#" id="footer-important-link">Important info</a></li>
+                <li><a href="#" target="_blank" rel="noopener">Privacy policy &#x29C9;</a></li>
+                <li><a href="#" target="_blank" rel="noopener">Cookie policy &#x29C9;</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
         </div>
     </footer>
+
+    <!-- Important Info Modal -->
+    <div class="modal-overlay" id="important-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+        <div class="modal">
+            <div class="modal__header">
+                <button class="modal__close" id="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal__body">
+                <h2 id="modal-heading">Important information</h2>
+                <p class="modal__intro">We have written this to help you understand what information we collect, how we use it and what choices you have.</p>
+                <div class="modal__grid">
+                    <div class="modal__grid-item"><div class="modal__icon">&#128203;</div><h3>Before you begin</h3><p>Swinton Go! Insurance is arranged and administered by BISL Limited, an insurance intermediary.</p></div>
+                    <div class="modal__grid-item"><div class="modal__icon">&#128193;</div><h3>How we use your data</h3><p>We will use your data for the purposes of providing your quote.</p></div>
+                    <div class="modal__grid-item"><div class="modal__icon">&#127850;</div><h3>Cookie policy</h3><p>Information on cookies is available <a href="#" style="color:var(--navy);">here</a>.</p></div>
+                    <div class="modal__grid-item"><div class="modal__icon">&#128070;</div><h3>Privacy policy</h3><p>See our <a href="#" style="color:var(--navy);text-decoration:underline;">Privacy Policy</a>.</p></div>
+                </div>
+            </div>
+            <div class="modal__footer"><button class="button button--primary" id="modal-done">Done</button></div>
+        </div>
+    </div>
 
     <script src="js/app.js"></script>
     <script>
@@ -81,28 +85,28 @@
 
         /* Retrieve all store values */
         var data = {
-            title:            Store.get('title')           || '',
-            firstName:        Store.get('firstName')       || '',
-            lastName:         Store.get('lastName')        || '',
-            dob:              Store.get('dob')             || '',
-            maritalStatus:    Store.get('maritalStatus')   || '',
-            registration:     Store.get('registration')    || '',
-            vehicle:          Store.get('vehicle')         || {},
-            purchaseDate:     Store.get('purchaseDate')    || '',
-            carOwner:         Store.get('carOwner')        || '',
-            carUse:           Store.get('carUse')          || '',
-            annualMileage:    Store.get('annualMileage')   || '0',
+            title:            Store.get('title')            || '',
+            firstName:        Store.get('firstName')        || '',
+            lastName:         Store.get('lastName')         || '',
+            dob:              Store.get('dob')              || '',
+            maritalStatus:    Store.get('maritalStatus')    || '',
+            registration:     Store.get('registration')     || '',
+            vehicle:          Store.get('vehicle')          || {},
+            purchaseDate:     Store.get('purchaseDate')     || '',
+            carOwner:         Store.get('carOwner')         || '',
+            carUse:           Store.get('carUse')           || '',
+            annualMileage:    Store.get('annualMileage')    || '0',
             overnightParking: Store.get('overnightParking') || '',
-            modifications:    Store.get('modifications')   || 'no',
-            licenceType:      Store.get('licenceType')     || 'full-uk',
-            licenceYears:     Store.get('licenceYears')    || '0',
-            ncbYears:         Store.get('ncbYears')        || '0',
-            claimsCount:      Store.get('claimsCount')     || 0,
+            modifications:    Store.get('modifications')    || 'no',
+            licenceType:      Store.get('licenceType')      || 'Full UK / EU',
+            licenceYears:     Store.get('licenceYears')     || '0',
+            ncbYears:         Store.get('ncbYears')         || '0',
+            claimsCount:      Store.get('claimsCount')      || 0,
             convictionsCount: Store.get('convictionsCount') || 0,
-            coverType:        Store.get('coverType')       || 'comprehensive',
-            startDate:        Store.get('startDate')       || '',
-            voluntaryExcess:  Store.get('voluntaryExcess') || '250',
-            paymentMethod:    Store.get('paymentMethod')   || 'monthly'
+            coverType:        Store.get('coverType')        || 'comprehensive',
+            startDate:        Store.get('startDate')        || '',
+            voluntaryExcess:  Store.get('voluntaryExcess')  || '250',
+            paymentMethod:    Store.get('paymentMethod')    || 'monthly'
         };
 
         /* Parse stored DOB (DD/MM/YYYY) into a Date for calculateQuote */
@@ -121,6 +125,7 @@
             return { tpo: 'Third Party Only', tpft: 'Third Party Fire & Theft', comprehensive: 'Comprehensive' }[v] || v;
         }
         function fmtDate(isoStr) {
+            if (!isoStr) return '&mdash;';
             var d = new Date(isoStr + 'T00:00:00');
             return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
         }
@@ -130,65 +135,55 @@
             return n.toLocaleString('en-GB') + ' miles';
         }
         function fmtParking(v) {
-            return { garage:'Locked garage', driveway:'Driveway at home', street:'Street near home', carpark:'Car park', other:'Other' }[v] || v;
-        }
-        function fmtLicence(v) {
-            return { 'full-uk':'Full UK licence', 'prov-uk':'Provisional UK licence', eu:'European Union licence', intl:'International licence' }[v] || v;
+            return { 'Driveway/Private land':'Driveway / Private land', 'Garage':'Garage', 'Street/Road':'Street / Road', 'Car park':'Car park', 'Other':'Other' }[v] || v || '&mdash;';
         }
         function fmtTitle(v) {
-            var t = { MR:'Mr', MRS:'Mrs', MS:'Ms', MISS:'Miss', MX:'Mx', DR:'Dr' };
-            return t[v] || v;
+            return { MR:'Mr', MRS:'Mrs', MS:'Ms', MISS:'Miss', MX:'Mx', DR:'Dr' }[v] || v;
         }
-        function fmtExcess(v) { return '&pound;' + parseInt(v, 10).toLocaleString('en-GB'); }
+        function fmtExcess(v) { return '&pound;' + parseInt(v || 0, 10).toLocaleString('en-GB'); }
 
         var veh = data.vehicle;
-        var vehLabel = veh ? (veh.make + ' ' + veh.model + (veh.variant ? ' ' + veh.variant : '')) : '&mdash;';
+        var vehLabel = veh && veh.make ? (veh.make + ' ' + veh.model + (veh.variant ? ' ' + veh.variant : '')) : '&mdash;';
         var regRef = 'SGQ-' + Math.floor(10000000 + Math.random() * 90000000);
         var coverLabel = fmtCoverType(data.coverType);
-
         var monthlyFmt = prices.monthly.toFixed(2);
         var annualFmt  = prices.annual.toLocaleString('en-GB');
 
-        /* --- Build the output HTML --- */
         var html = '';
 
         /* Quote heading */
         html += '<div style="text-align:center;padding:24px 0 8px;">';
-        html += '<h1 style="font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px;">Your ' + coverLabel + ' Car Insurance Quote</h1>';
+        html += '<h1 style="font-size:28px;font-weight:700;color:var(--navy);margin-bottom:6px;">Your ' + coverLabel + ' Car Insurance Quote</h1>';
         html += '<p style="color:var(--text-light);font-size:15px;">Quote reference: <strong style="color:var(--navy);">' + regRef + '</strong> &nbsp;&bull;&nbsp; Valid for 30 days</p>';
         html += '</div>';
 
-        /* Quote hero with two price boxes */
+        /* Quote hero */
         html += '<div class="quote-hero">';
         html += '<div class="quote-hero__label">Choose how you\'d like to pay</div>';
         html += '<div class="quote-hero__prices">';
 
-        /* Monthly price box */
-        html += '<div class="price-box ' + (data.paymentMethod === 'monthly' ? 'selected' : '') + '" id="price-monthly" onclick="selectPayment(\'monthly\')">';
+        html += '<div class="price-box ' + (data.paymentMethod === 'monthly' ? 'selected' : '') + '" id="price-monthly" onclick="selectPayment(\'monthly\')" role="button" tabindex="0">';
         html += '<div class="price-box__period">Monthly</div>';
         html += '<div class="price-box__amount"><sup>&pound;</sup>' + monthlyFmt.split('.')[0] + '<sup style="font-size:22px;vertical-align:super;">.' + monthlyFmt.split('.')[1] + '</sup></div>';
         html += '<div class="price-box__sub">per month (inc. 13% credit charge)</div>';
         html += '</div>';
 
-        /* Annual price box */
-        html += '<div class="price-box ' + (data.paymentMethod === 'annual' ? 'selected' : '') + '" id="price-annual" onclick="selectPayment(\'annual\')">';
+        html += '<div class="price-box ' + (data.paymentMethod === 'annual' ? 'selected' : '') + '" id="price-annual" onclick="selectPayment(\'annual\')" role="button" tabindex="0">';
         html += '<div class="price-box__period">Annually</div>';
         html += '<div class="price-box__amount"><sup>&pound;</sup>' + annualFmt + '</div>';
         html += '<div class="price-box__sub">per year &ndash; best value</div>';
         html += '</div>';
-
-        html += '</div>';/* /quote-hero__prices */
+        html += '</div>';
 
         html += '<div class="quote-hero__actions">';
         html += '<button class="button button--primary button--large" onclick="alert(\'This is a demo \u2013 no actual purchase will be made.\')">Buy now &rarr;</button>';
         html += '<a href="your-cover.html" class="button button--secondary">Amend cover</a>';
         html += '</div>';
-        html += '</div>';/* /quote-hero */
+        html += '</div>';
 
-        /* Two summary cards */
+        /* Summary grid */
         html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;" class="summary-grid">';
 
-        /* Cover summary */
         html += '<div class="card" style="margin-bottom:0;">';
         html += '<h2 class="card__title" style="font-size:16px;">Your cover summary</h2>';
         html += '<table class="summary-list"><tbody>';
@@ -201,29 +196,26 @@
         if (data.registration) html += '<tr><td>Registration</td><td style="letter-spacing:2px;">' + data.registration.toUpperCase() + '</td></tr>';
         html += '</tbody></table></div>';
 
-        /* Driver summary */
         html += '<div class="card" style="margin-bottom:0;">';
         html += '<h2 class="card__title" style="font-size:16px;">Your details summary</h2>';
         html += '<table class="summary-list"><tbody>';
         html += '<tr><td>Name</td><td>' + fmtTitle(data.title) + ' ' + data.firstName + ' ' + data.lastName + '</td></tr>';
         html += '<tr><td>Date of birth</td><td>' + (storedDob || '&mdash;') + '</td></tr>';
         if (data.maritalStatus) html += '<tr><td>Marital status</td><td>' + data.maritalStatus + '</td></tr>';
-        html += '<tr><td>Driving licence</td><td>' + fmtLicence(data.licenceType) + '</td></tr>';
+        html += '<tr><td>Driving licence</td><td>' + (data.licenceType || '&mdash;') + '</td></tr>';
         html += '<tr><td>Years NCB</td><td>' + (data.ncbYears === '9' ? '9+' : data.ncbYears) + ' years</td></tr>';
         html += '<tr><td>Claims (5 yrs)</td><td>' + (+data.claimsCount === 0 ? 'None' : data.claimsCount) + '</td></tr>';
         html += '<tr><td>Convictions (5 yrs)</td><td>' + (+data.convictionsCount === 0 ? 'None' : data.convictionsCount) + '</td></tr>';
         html += '</tbody></table></div>';
 
-        html += '</div>';/* /summary-grid */
+        html += '</div>';
 
-        /* Info note */
-        html += '<div class="info-box info-box--navy" style="margin-bottom:20px;">';
+        html += '<div class="info-box" style="margin-bottom:20px;">';
         html += '<span>&#10003;</span>';
         html += '<span>This quote is valid for 30 days. Your reference is <strong>' + regRef + '</strong>. ';
         html += 'Swinton Go! Insurance is arranged and administered by BISL Limited, authorised and regulated by the FCA.</span>';
         html += '</div>';
 
-        /* Start again */
         html += '<p style="text-align:center;margin-top:16px;margin-bottom:32px;">';
         html += '<a href="index.html" style="color:var(--navy);font-size:14px;text-decoration:underline;" onclick="Store.clear();">&larr; Start a new quote</a>';
         html += '</p>';
@@ -232,23 +224,25 @@
 
         /* Responsive summary grid */
         var grid = document.querySelector('.summary-grid');
-        if (grid && window.innerWidth < 640) {
-            grid.style.gridTemplateColumns = '1fr';
-        }
+        if (grid && window.innerWidth < 640) grid.style.gridTemplateColumns = '1fr';
     });
 
     function selectPayment(type) {
         var monthly = document.getElementById('price-monthly');
         var annual  = document.getElementById('price-annual');
         if (!monthly || !annual) return;
-        if (type === 'monthly') {
-            monthly.classList.add('selected');
-            annual.classList.remove('selected');
-        } else {
-            annual.classList.add('selected');
-            monthly.classList.remove('selected');
-        }
+        if (type === 'monthly') { monthly.classList.add('selected'); annual.classList.remove('selected'); }
+        else { annual.classList.add('selected'); monthly.classList.remove('selected'); }
     }
+    </script>
+    <script>
+    (function() {
+        var modal = document.getElementById('important-modal');
+        document.getElementById('footer-important-link').addEventListener('click', function(e){ e.preventDefault(); modal.classList.add('open'); });
+        document.getElementById('modal-close').addEventListener('click', function(){ modal.classList.remove('open'); });
+        document.getElementById('modal-done').addEventListener('click',  function(){ modal.classList.remove('open'); });
+        modal.addEventListener('click', function(e){ if(e.target===this) modal.classList.remove('open'); });
+    }());
     </script>
 </body>
 </html>

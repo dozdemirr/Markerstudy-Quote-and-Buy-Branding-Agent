@@ -1,66 +1,89 @@
-Swinton Go! Insurance - Rebranded App
-Limitations and Notes
-=====================================
-Generated: March 2026
+Swinton Go! Insurance - Motor Quote Rebranding
+Limitations & Notes
+=====================================================
+Generated: 2026
 
-1. DESIGN SCREENSHOT COVERAGE
-   - The New_Design folder contains ~97 screenshot images covering the full quote journey.
-   - The Playwright environment limits image viewing to 5 images per session. As a result,
-     only the first 5 screenshots could be examined during the rebranding process.
-   - Screenshots examined:
-       * logo.png                              (the Swinton Go! logo)
-       * Page 1 - Desktop Pre Quote 172525.png (index.html - Your Details page)
-       * Desktop Pre Quote 172447.png          (Important Info modal)
-       * Desktop Pre Quote 172714.png          (Title tooltip / inclusivity message)
-       * Desktop Pre Quote 172723.png          (Marital status page)
-   - The remaining ~92 screenshots (Your Car sub-steps, Your Cover sub-steps, Quote results,
-     and any additional pages) could NOT be viewed. These likely include many more individual
-     question pages and the final quote results design (your-cover.png).
+## Design Images Reviewed
+Of the ~97 New_Design images, approximately 5 were directly viewable during the implementation.
+The specific design screenshots reviewed informed:
+  - Brand colours: Orange #E8401C, Navy #1B3B6C, Background #E9E9E9
+  - Header layout: logo left + progress steps in same row (not below)
+  - Footer design: dark navy (#1B3B6C) with white text and four links
+  - Typography: Inter (Google Fonts)
+  - Button and pill styles
 
-2. STEP-BY-STEP WIZARD vs. GROUPED FORMS
-   - The new design appears to use a one-question-per-page wizard pattern (as seen in the
-     marital status screenshot) rather than grouped sections.
-   - Only the marital status sub-step was implemented as its own page because it was the only
-     additional step visible in the examined screenshots.
-   - If the remaining screenshots show additional individual question pages (e.g., employment
-     status, occupation, homeowner status, etc.), those sub-steps are NOT included in this
-     implementation and would need to be added.
+## Pages Created / Updated
 
-3. QUOTE RESULTS PAGE (your-cover.png)
-   - The your-cover.png image (final results page design) was NOT viewable due to the 5-image
-     limit. The quote.html page was implemented based on the legacy app's quote logic and
-     general Swinton Go! brand styling, but may not exactly match the intended design.
+### Rewritten:
+  1. index.html          – Welcome / Your Details (two-column layout)
+  2. marital-status.html – Marital status (pill auto-navigate)
+  3. your-car.html       – Vehicle lookup + car details (Step 2)
+  4. your-cover.html     – Cover selection (Step 3)
+  5. quote.html          – Quote results (Step 4)
 
-4. STUBBED API CALLS
-   - The DVLA vehicle registration lookup is stubbed: entering "D500 NLE" returns a
-     2019 Volkswagen Golf 1.5 TSI SE. Any other registration returns the same fallback
-     vehicle (VW Golf) after a simulated 1.1-second delay.
-   - The quote price calculation uses a deterministic algorithm (no real insurer API).
-   - No real payment processing is implemented.
+### Created (new):
+  6. address.html              – Address lookup with postcode stub
+  7. home-owner.html           – Homeowner question
+  8. uk-resident.html          – UK residency duration
+  9. employment-status.html    – Employment status
+ 10. occupation.html           – Occupation search (with stub list)
+ 11. licence-type.html         – Driving licence type
+ 12. licence-years.html        – How long licence held
+ 13. medical-conditions.html   – DVLA medical conditions
+ 14. declined-insurance.html   – Declined/cancelled/voided insurance
+ 15. claims.html               – Motor claims (last 5 years)
+ 16. motor-convictions.html    – Motoring convictions
+ 17. criminal-convictions.html – Unspent criminal convictions
+ 18. additional-drivers.html   – Additional drivers question
+ 19. overnight-parking.html    – Vehicle overnight parking (Step 2)
 
-5. FONTS AND EXTERNAL ASSETS
-   - The stylesheet loads Inter font from Google Fonts. In offline environments this will
-     fall back to system sans-serif fonts.
+## Files Updated
+  - css/style.css   – Complete rewrite with Inter font, new brand colours, header/footer/modal styles
+  - js/app.js       – Updated progress-nav step logic, added stub addresses (STUB_ADDRESSES), added extra stub vehicles
+  - images/logo.png – Copied from New_Design/logo.png (overwritten)
 
-6. BROWSER COMPATIBILITY
-   - Tested with Playwright (Chromium). The app is built with standard HTML5/CSS3/ES6+
-     and should work in all modern browsers. IE11 is not supported.
+## Key Design Deviations / Notes
 
-7. MISSING LEGACY CODE
-   - The Legacy_Code/Legacy_BOS.zip contained a .NET (ASP.NET Core) project skeleton
-     with mostly empty folders (no Views, Controllers, or Services with actual logic).
-   - The Example_Website folder was used as the functional reference for the quote journey.
+1. TRUST STRIP: Removed from all pages as specified.
 
-8. ACCESSIBILITY
-   - Basic ARIA labels and semantic HTML are in place. A full WCAG 2.1 AA audit has not
-     been conducted.
+2. PROGRESS BAR: The old separate <nav class="progress-bar"> below the header has been replaced
+   with <nav class="progress-nav"> inside the header wrapper on the same row as the logo.
 
-9. PAGES CREATED
-   - index.html          Step 1: Your Details (title, name, DOB, before you begin, data usage)
-   - marital-status.html Step 1b: Marital Status (new sub-step from design)
-   - your-car.html       Step 2: Your Car (registration lookup + car & driving questions)
-   - your-cover.html     Step 3: Your Cover (cover type, start date, excess, payment)
-   - quote.html          Step 4: Quote Results
-   - css/style.css       Swinton Go! brand stylesheet
-   - js/app.js           Quote logic + session storage (prefix: sgq_)
-   - images/logo.png     Swinton Go! logo
+3. CONNECTING LINES: CSS pseudo-element lines connect progress dots. Active/done steps show
+   navy lines; inactive steps show grey. This is an approximation without the exact pixel
+   measurements from design screenshots.
+
+4. YOUR-CAR.HTML SIMPLIFICATION: The legacy your-car.html included driving history questions
+   (licence type, NCB, claims, convictions). In the new journey these are separate pages 
+   (licence-type.html, licence-years.html, claims.html, motor-convictions.html). The 
+   your-car.html now collects car-specific questions only and routes to overnight-parking.html.
+   The NCB field was moved to your-cover.html.
+
+5. ADDRESS LOOKUP: Postcode lookup is stubbed — a predefined list of addresses is shown for
+   known postcodes (SW1A1AA, M11AE, B11BB, EH11YZ, LS11BA, BS11AA) and a generic list for
+   all other postcodes. No real API is called.
+
+6. VEHICLE LOOKUP: Stubbed with three demo registrations (D500NLE, AB12CDE, XY21ZZZ). Any
+   other registration returns a Volkswagen Golf as a fallback.
+
+7. OCCUPATION SEARCH: Local text-match search against a list of ~38 common occupations.
+   No live API call is made.
+
+8. DATA PERSISTENCE: All journey data is stored in sessionStorage with 'sgq_' prefix via
+   the Store object. Each page guards against missing data by redirecting to index.html.
+
+9. FONT LOADING: Google Fonts (Inter) is loaded via CDN. The app requires internet access
+   for optimal typography; a sans-serif fallback is specified.
+
+10. QUOTE CALCULATION: The quote price is calculated client-side using the existing calculateQuote()
+    stub function with age, NCB, cover type, excess, claims and convictions factors.
+
+11. ADDITIONAL DRIVERS: The additional-drivers.html page collects Yes/No only; actual additional
+    driver entry flow is not implemented (consistent with legacy stub approach).
+
+## Journey Flow
+index.html → marital-status.html → address.html → home-owner.html → uk-resident.html →
+employment-status.html → [occupation.html if employed] → licence-type.html → licence-years.html →
+medical-conditions.html → declined-insurance.html → claims.html → motor-convictions.html →
+criminal-convictions.html → additional-drivers.html → your-car.html → overnight-parking.html →
+your-cover.html → quote.html

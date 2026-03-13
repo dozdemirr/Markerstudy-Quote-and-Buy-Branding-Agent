@@ -4,7 +4,7 @@
  * and quote price calculation.
  */
 
-// ── Storage helpers ───────────────────────────────────────
+// ── Storage helpers ────────────────────────────────────────────────────────
 const Store = (() => {
     const PREFIX = 'sgq_';
     return {
@@ -17,20 +17,40 @@ const Store = (() => {
     };
 })();
 
-// ── Vehicle database (demo stub) ──────────────────────────
+// ── Stub address data ──────────────────────────────────────────────────────
+const STUB_ADDRESSES = {
+    'SW1A1AA': ['10 Downing Street, London, SW1A 1AA', '12 Downing Street, London, SW1A 1AA'],
+    'SW1A2AA': ['Buckingham Palace, London, SW1A 2AA'],
+    'M11AE':   ['1 Market Street, Manchester, M1 1AE', '3 Market Street, Manchester, M1 1AE', '5 Market Street, Manchester, M1 1AE'],
+    'B11BB':   ['1 Corporation Street, Birmingham, B1 1BB', '2 Corporation Street, Birmingham, B1 1BB'],
+    'EH11YZ':  ['1 Royal Mile, Edinburgh, EH1 1YZ', '5 Royal Mile, Edinburgh, EH1 1YZ'],
+    'LS11BA':  ['Leeds City Centre, Leeds, LS1 1BA', '2 The Headrow, Leeds, LS1 1BA'],
+    'BS11AA':  ['1 Broad Quay, Bristol, BS1 1AA', '3 Broad Quay, Bristol, BS1 1AA'],
+    'DEFAULT': [
+        '1 High Street, Anytown, AA1 1AA',
+        '2 High Street, Anytown, AA1 1AA',
+        '3 High Street, Anytown, AA1 1AA',
+        '4 High Street, Anytown, AA1 1AA',
+        '5 High Street, Anytown, AA1 1AA'
+    ]
+};
+
+// ── Vehicle database (demo stub) ──────────────────────────────────────────
 const VEHICLES = {
     'D500NLE': {
-        make:         'Volkswagen',
-        model:        'Golf',
-        variant:      '1.5 TSI SE 5dr',
-        year:         2019,
-        cc:           1498,
-        fuelType:     'Petrol',
-        transmission: 'Manual',
-        doors:        5,
-        bodyType:     'Hatchback',
-        colour:       'Metallic Silver',
-        value:        14250
+        make: 'Volkswagen', model: 'Golf', variant: '1.5 TSI SE 5dr',
+        year: 2019, cc: 1498, fuelType: 'Petrol', transmission: 'Manual',
+        doors: 5, bodyType: 'Hatchback', colour: 'Metallic Silver', value: 14250
+    },
+    'AB12CDE': {
+        make: 'Ford', model: 'Focus', variant: '1.0 EcoBoost Titanium 5dr',
+        year: 2021, cc: 999, fuelType: 'Petrol', transmission: 'Manual',
+        doors: 5, bodyType: 'Hatchback', colour: 'Frozen White', value: 18500
+    },
+    'XY21ZZZ': {
+        make: 'Toyota', model: 'Yaris', variant: '1.5 Hybrid Design 5dr',
+        year: 2022, cc: 1490, fuelType: 'Hybrid', transmission: 'Automatic',
+        doors: 5, bodyType: 'Hatchback', colour: 'Scarlet Flare', value: 22000
     }
 };
 
@@ -39,7 +59,7 @@ function lookupVehicle(rawReg) {
     return VEHICLES[reg] || null;
 }
 
-// ── Quote price calculation ───────────────────────────────
+// ── Quote price calculation ────────────────────────────────────────────────
 function calculateQuote(data) {
     let base = 580;
 
@@ -71,7 +91,7 @@ function calculateQuote(data) {
 
     // Voluntary excess credit
     const volExcess = parseInt(data.voluntaryExcess || 0, 10);
-    if (volExcess >= 500) base -= 40;
+    if      (volExcess >= 500) base -= 40;
     else if (volExcess >= 250) base -= 20;
 
     const annual  = Math.max(Math.round(base), 200);
@@ -80,48 +100,39 @@ function calculateQuote(data) {
     return { annual, monthly };
 }
 
-// ── Form helpers ──────────────────────────────────────────
+// ── Form helpers ───────────────────────────────────────────────────────────
 function setError(input, msg) {
     input.classList.add('form-control--error');
-    const v = input.closest('.form-row')?.querySelector('.form-row__validation-text');
+    const v = input.closest && input.closest('.form-row')?.querySelector('.form-row__validation-text');
     if (v) { v.textContent = msg; v.classList.add('visible'); }
 }
 
 function clearError(input) {
     input.classList.remove('form-control--error');
-    const v = input.closest('.form-row')?.querySelector('.form-row__validation-text');
+    const v = input.closest && input.closest('.form-row')?.querySelector('.form-row__validation-text');
     if (v) v.classList.remove('visible');
 }
 
-function validateRequired(input, label) {
-    if (!input.value.trim()) {
-        setError(input, `${label || 'This field'} is required`);
-        return false;
-    }
-    clearError(input);
-    return true;
-}
-
-// ── DOM helpers ───────────────────────────────────────────
-function $(sel, ctx) { return (ctx || document).querySelector(sel); }
-function $$(sel, ctx){ return [...(ctx || document).querySelectorAll(sel)]; }
+// ── DOM helpers ────────────────────────────────────────────────────────────
+function $(sel, ctx)  { return (ctx || document).querySelector(sel); }
+function $$(sel, ctx) { return [...(ctx || document).querySelectorAll(sel)]; }
 
 function autoUppercase(input) {
     input.addEventListener('input', () => { input.value = input.value.toUpperCase(); });
 }
 
-// ── Shared init ───────────────────────────────────────────
+// ── Shared DOMContentLoaded init ───────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-    // Footer year
-    const fy = document.getElementById('footer-year');
-    if (fy) fy.textContent = new Date().getFullYear();
-
-    // Mark step as done/active in progress bar from data-step on body
-    const active = parseInt(document.body.dataset.step, 10);
-    const steps = $$('.step');
+    // Mark steps done/active using new progress-nav classes
+    const active = parseInt(document.body.dataset.step || '1', 10);
+    const steps = $$('.progress-nav__step');
     steps.forEach(s => {
         const n = parseInt(s.dataset.step, 10);
-        if (n < active)  s.classList.add('step--done');
-        if (n === active) s.classList.add('step--active');
+        if (n < active) {
+            s.classList.add('progress-nav__step--done');
+            s.classList.remove('progress-nav__step--active');
+        } else if (n === active) {
+            s.classList.add('progress-nav__step--active');
+        }
     });
 });
