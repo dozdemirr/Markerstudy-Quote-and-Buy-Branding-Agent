@@ -4,8 +4,8 @@
 const Store = (() => {
     const PREFIX = 'sgq_';
     return {
-        get(key)      { try { return JSON.parse(sessionStorage.getItem(PREFIX + key)); } catch { return null; } },
-        set(key, val) { try { sessionStorage.setItem(PREFIX + key, JSON.stringify(val)); } catch {} },
+        get(key)      { try { return JSON.parse(sessionStorage.getItem(PREFIX + key)); } catch (e) { console.warn('Store.get failed for key:', PREFIX + key, e); return null; } },
+        set(key, val) { try { sessionStorage.setItem(PREFIX + key, JSON.stringify(val)); } catch (e) { console.warn('Store.set failed for key:', PREFIX + key, e); } },
         clear()       {
             const keys = Object.keys(sessionStorage).filter(k => k.startsWith(PREFIX));
             keys.forEach(k => sessionStorage.removeItem(k));
