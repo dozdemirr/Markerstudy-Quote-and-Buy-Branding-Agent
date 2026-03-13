@@ -1,0 +1,56 @@
+Swinton Go! Insurance - Motor Quote App
+Limitations & Notes
+=======================================
+
+1. VEHICLE LOOKUP (DVLA API)
+   - The vehicle lookup is stubbed with demo data only.
+   - Entering registration "D500 NLE" (or "D500NLE") returns a 2019 Volkswagen Golf 1.5 TSI SE 5dr.
+   - Any other registration number will also return the same fallback VW Golf (no real DVLA lookup).
+   - A real implementation would integrate with the DVLA Vehicle Enquiry Service (VES) API.
+   - A simulated 1.1-second delay mimics a real API call.
+
+2. QUOTE CALCULATION
+   - Prices are calculated using a simplified in-house algorithm based on age, cover type, NCB years,
+     claims history, convictions, and voluntary excess.
+   - These are NOT real insurer rates and should not be used for any actual insurance purpose.
+   - A real implementation would submit the data to a panel of insurers and return live quotes.
+
+3. PURCHASE FLOW
+   - The "Buy now" and "Pay annually" buttons on the quote page show a demo alert only.
+   - There is no real purchase flow, payment gateway, or policy issuance in this demo.
+
+4. LOGO & IMAGES
+   - The Swinton Go! logo is loaded from: ../New_Design/logo.png
+     This path is relative to the New_App/ folder. The New_Design folder must be present at the
+     same directory level as New_App/ for the logo to display.
+   - The Your Cover page banner image is loaded from: ../New_Design/your-cover.png
+     This also requires the New_Design folder to be present as above.
+
+5. NEW_DESIGN SCREENSHOTS
+   - The New_Design folder contained approximately 80+ desktop screenshot images of the target
+     design. Due to the volume of images, it was not possible to individually review every frame
+     during this session. The app has been styled to match the overall colour palette, layout, and
+     component patterns visible in the primary design assets (logo.png, your-cover.png) and the
+     brand specification provided.
+
+6. BACKEND / API INTEGRATIONS
+   - No backend server is required. The app is entirely static HTML/CSS/JS.
+   - All state is stored in browser sessionStorage using the 'sgq_' prefix.
+   - No real authentication, session management, or server-side validation exists.
+
+7. ADDITIONAL DRIVERS
+   - The "additional drivers" question on the Your Cover page is present but entering "Yes"
+     displays an info notice explaining that additional driver entry is not implemented in this demo.
+
+8. BROWSER COMPATIBILITY
+   - The app uses modern CSS (CSS custom properties, Grid, Flexbox) and ES6+ JavaScript.
+   - It requires a modern evergreen browser (Chrome, Firefox, Edge, Safari).
+   - Internet Explorer is not supported.
+
+9. FONT LOADING
+   - The app imports the Inter font from Google Fonts. An internet connection is required to load
+     the custom font; the app will fall back to system sans-serif fonts if unavailable.
+
+10. ACCESSIBILITY
+    - Basic ARIA roles and labels are included (progress nav, modal dialog).
+    - Full WCAG 2.1 AA compliance has not been audited in this demo.
