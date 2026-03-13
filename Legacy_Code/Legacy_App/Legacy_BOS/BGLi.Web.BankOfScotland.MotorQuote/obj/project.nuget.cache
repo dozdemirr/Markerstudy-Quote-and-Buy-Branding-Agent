@@ -1,0 +1,321 @@
+{
+  "version": 2,
+  "dgSpecHash": "q/gcjAz/7o4=",
+  "success": false,
+  "projectFilePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+  "expectedPackageFiles": [
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights/2.22.0/microsoft.applicationinsights.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights.aspnetcore/2.22.0/microsoft.applicationinsights.aspnetcore.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights.dependencycollector/2.22.0/microsoft.applicationinsights.dependencycollector.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights.eventcountercollector/2.22.0/microsoft.applicationinsights.eventcountercollector.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights.perfcountercollector/2.22.0/microsoft.applicationinsights.perfcountercollector.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights.windowsserver/2.22.0/microsoft.applicationinsights.windowsserver.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.applicationinsights.windowsserver.telemetrychannel/2.22.0/microsoft.applicationinsights.windowsserver.telemetrychannel.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.hosting/2.1.1/microsoft.aspnetcore.hosting.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.hosting.abstractions/2.1.1/microsoft.aspnetcore.hosting.abstractions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.hosting.server.abstractions/2.1.1/microsoft.aspnetcore.hosting.server.abstractions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.http/2.1.22/microsoft.aspnetcore.http.2.1.22.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.http.abstractions/2.1.1/microsoft.aspnetcore.http.abstractions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.http.extensions/2.1.1/microsoft.aspnetcore.http.extensions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.http.features/2.1.1/microsoft.aspnetcore.http.features.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.webutilities/2.1.1/microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.caching.abstractions/1.0.0/microsoft.extensions.caching.abstractions.1.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.caching.memory/1.0.0/microsoft.extensions.caching.memory.1.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.configuration/3.1.0/microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.configuration.abstractions/3.1.0/microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.configuration.binder/2.1.1/microsoft.extensions.configuration.binder.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.configuration.environmentvariables/2.1.1/microsoft.extensions.configuration.environmentvariables.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.configuration.fileextensions/3.1.0/microsoft.extensions.configuration.fileextensions.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.configuration.json/3.1.0/microsoft.extensions.configuration.json.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.dependencyinjection/2.1.1/microsoft.extensions.dependencyinjection.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.1/microsoft.extensions.dependencyinjection.abstractions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.fileproviders.abstractions/3.1.0/microsoft.extensions.fileproviders.abstractions.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.fileproviders.physical/3.1.0/microsoft.extensions.fileproviders.physical.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.filesystemglobbing/3.1.0/microsoft.extensions.filesystemglobbing.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.hosting.abstractions/2.1.1/microsoft.extensions.hosting.abstractions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.logging/2.1.1/microsoft.extensions.logging.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.logging.abstractions/2.1.1/microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.logging.applicationinsights/2.22.0/microsoft.extensions.logging.applicationinsights.2.22.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.objectpool/2.1.1/microsoft.extensions.objectpool.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.options/2.1.1/microsoft.extensions.options.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.extensions.primitives/3.1.0/microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.net.http.headers/2.1.1/microsoft.net.http.headers.2.1.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.netcore.platforms/1.0.1/microsoft.netcore.platforms.1.0.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.netcore.targets/1.0.1/microsoft.netcore.targets.1.0.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/stylecop.analyzers/1.1.118/stylecop.analyzers.1.1.118.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.collections/4.0.11/system.collections.4.0.11.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.configuration.configurationmanager/6.0.0/system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.diagnostics.debug/4.0.11/system.diagnostics.debug.4.0.11.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.diagnostics.diagnosticsource/5.0.0/system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.diagnostics.performancecounter/6.0.0/system.diagnostics.performancecounter.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.globalization/4.0.11/system.globalization.4.0.11.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.io/4.1.0/system.io.4.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.io.filesystem.accesscontrol/4.7.0/system.io.filesystem.accesscontrol.4.7.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.linq/4.1.0/system.linq.4.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.reflection/4.1.0/system.reflection.4.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.reflection.primitives/4.0.1/system.reflection.primitives.4.0.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.resources.resourcemanager/4.0.1/system.resources.resourcemanager.4.0.1.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.runtime/4.1.0/system.runtime.4.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.runtime.extensions/4.1.0/system.runtime.extensions.4.1.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.security.accesscontrol/6.0.0/system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.security.permissions/6.0.0/system.security.permissions.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.text.encoding/4.0.11/system.text.encoding.4.0.11.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.threading/4.0.11/system.threading.4.0.11.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.threading.tasks/4.0.11/system.threading.tasks.4.0.11.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.netcore.app.ref/8.0.23/microsoft.netcore.app.ref.8.0.23.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512",
+    "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages/microsoft.netcore.app.host.linux-x64/8.0.23/microsoft.netcore.app.host.linux-x64.8.0.23.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGL.UI.BankOfScotland.Resources. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGL.UI.BankOfScotland.Resources",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGL.UI.Common.Resources. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGL.UI.Common.Resources",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGL.UI.Common.Scripts. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGL.UI.Common.Scripts",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.BaseApp.BaseApplication. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.BaseApp.BaseApplication",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.AdditionalDetails. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.AdditionalDetails",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.Basket. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.Basket",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.CoverDetails. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.CoverDetails",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.CoverRange. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.CoverRange",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.DemandsAndNeeds. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.DemandsAndNeeds",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.DriverDetails. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.DriverDetails",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.Footer. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.Footer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.GoogleTagManager. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.GoogleTagManager",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.MarketingPreferences. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.MarketingPreferences",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.Navigation. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.Navigation",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.OptionalExtras. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.OptionalExtras",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.PageReloader. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.PageReloader",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.TakePayment. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.TakePayment",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.TermsAndConds. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.TermsAndConds",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.VehicleDetails. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.VehicleDetails",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.VirtualAssistant. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.VirtualAssistant",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Components.WelcomeQuote. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Components.WelcomeQuote",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BGLi.Security.Web.Authentication. No packages exist with this id in source(s): nuget.org",
+      "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "filePath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+      "libraryId": "BGLi.Security.Web.Authentication",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

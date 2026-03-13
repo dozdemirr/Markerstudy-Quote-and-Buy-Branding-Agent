@@ -1,0 +1,184 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj": {}
+  },
+  "projects": {
+    "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+        "projectName": "BGLi.Web.BankOfScotland.MotorQuote",
+        "projectPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/BGLi.Web.BankOfScotland.MotorQuote.csproj",
+        "packagesPath": "/tmp/codeql-scratch-a25f2b5b96c53356/dbs/csharp/working/packages",
+        "outputPath": "/home/runner/work/BrandingAgent/BrandingAgent/Legacy_Code/Legacy_App/Legacy_BOS/BGLi.Web.BankOfScotland.MotorQuote/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BGL.UI.BankOfScotland.Resources": {
+              "target": "Package",
+              "version": "[8.5.2, )"
+            },
+            "BGL.UI.Common.Resources": {
+              "target": "Package",
+              "version": "[11.7.0, )"
+            },
+            "BGL.UI.Common.Scripts": {
+              "target": "Package",
+              "version": "[10.3.4, )"
+            },
+            "BGLi.BaseApp.BaseApplication": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
+            "BGLi.Components.AdditionalDetails": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BGLi.Components.Basket": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            },
+            "BGLi.Components.CoverDetails": {
+              "target": "Package",
+              "version": "[25.0.0, )"
+            },
+            "BGLi.Components.CoverRange": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "BGLi.Components.DemandsAndNeeds": {
+              "target": "Package",
+              "version": "[18.0.0.1, )"
+            },
+            "BGLi.Components.DriverDetails": {
+              "target": "Package",
+              "version": "[15.0.0, )"
+            },
+            "BGLi.Components.Footer": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BGLi.Components.GoogleTagManager": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            },
+            "BGLi.Components.MarketingPreferences": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            },
+            "BGLi.Components.Navigation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BGLi.Components.OptionalExtras": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BGLi.Components.PageReloader": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BGLi.Components.TakePayment": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
+            "BGLi.Components.TermsAndConds": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BGLi.Components.VehicleDetails": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "BGLi.Components.VirtualAssistant": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "BGLi.Components.WelcomeQuote": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "BGLi.Security.Web.Authentication": {
+              "target": "Package",
+              "version": "[6.4.3, )"
+            },
+            "Microsoft.ApplicationInsights.AspNetCore": {
+              "target": "Package",
+              "version": "[2.22.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.23, 8.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.23, 8.0.23]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.23, 8.0.23]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
